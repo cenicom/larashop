@@ -19,7 +19,6 @@
                         <thead class="text-white" style="background: #3b3f5c">
                             <tr>
                                 <th class="table-th text-center text-white">Nombre Categoria</th>
-                                <th class="table-th text-center text-white">Descripción</th>
                                 <th class="table-th text-center text-white">Imagen</th>
                                 <th class="table-th text-center text-white">Acciones</th>
                             </tr>
@@ -29,9 +28,6 @@
                             <tr>
                                 <td>
                                     <h6>{{$category->name}}</h6>
-                                </td>
-                                <td class="text-left">
-                                    <h6>{{$category->description}}</h6>
                                 </td>
                                 <td class="text-center">
                                     <span>
@@ -60,7 +56,7 @@
             </div>
         </div>
     </div>
-    @include('livewire.categorias.form')
+    @include('livewire.categories.form')
 </div>
 
 <script>
@@ -80,33 +76,24 @@
 </script>
 
 <script>
-    function confirm(id/* , products */) {
-        // body...
-        /* if (products > 0) {
-            Swal('No Se Puede Eleminar la Categoria Seleccionada, Porque Ya Tiene Productos Relacionados')
-            return;
-        }
-        else{ */
-                Swal({
-                title: 'CONFIRMAR BORRADO',
-                text: '¿Está Seguro de Querer Eliminar la Categoria Seleccionada?',
-                type: 'warning',
-                showCancelButton: true,
-                cancelButtonText: 'Cerrar',
-                cancelButtonColor: '#fff',
-                confirmButtonColor: '#3B3F5C',
-                confirmButtonText: 'Aceptar'
-                }).then(function(result) {
-                // body...
-                    if(result.value){
-                        window.livewire.emit('deleteRow', id)
-                        Swal.close()
-                        }
-                    })
-                }
+    function confirm(id) {
+        Swal({
+            title: 'CONFIRMAR BORRADO',
+            text: '¿Está Seguro de Querer Eliminar la Categoria Seleccionada?',
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Aceptar'
+        }).then(function(result) {
+            // body...
+            if(result.value){
+            window.livewire.emit('deleteRow', id)
+                Swal.close()
             }
-
-
+        })
+    }
 </script>
 
 
