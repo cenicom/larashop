@@ -20,9 +20,19 @@ class Product extends Model
         'category_id'
     ];
 
-    /* public function category()
+    public function category()
     {
         # code...
-        return
-    } */
+        return $this->belongsTo(Category::class);
+    }
+
+    public function getImagenAttribute()
+    {
+        # code...
+        if(file_exists('storage/products/' . $this->image)){
+            return $this->image;
+        }else{
+            return 'noimagen.jpg';
+        }
+    }
 }
