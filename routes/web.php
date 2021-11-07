@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CategoriesController;
 
@@ -26,8 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('categories', CategoriesController::class);
 Route::get('products', ProductsController::class);
-/* Route::get('denominations', CoinsController::class);
-Route::get('pos', PosController::class);
+Route::get('denominations', CoinsController::class);
+/* Route::get('pos', PosController::class);
 Route::get('roles', RolesController::class);
 Route::get('permisos', PermisosController::class);
 Route::get('asignar', AsignarController::class);
