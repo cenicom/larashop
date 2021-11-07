@@ -20,7 +20,7 @@
     <link href="{{asset('template/assets/css/elements/avatar.css')}}" rel="stylesheet" type="text/css" />
 
     <link href="{{asset('template/assets/css/widgets/modules-widgets.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('template\assets\css\forms\theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('template/assets/css/forms/theme-checkbox-radio.css')}}" rel="stylesheet" type="text/css" />
 
     <link href="{{ asset('template/assets/css/apps/notes.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/assets/css/apps/scrumboard.css') }}" rel="stylesheet" type="text/css" />

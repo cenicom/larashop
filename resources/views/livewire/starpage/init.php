@@ -8,14 +8,16 @@
                 <ul class="tabs tab-pills">
                     <li>
                         <a href="javascript:void(0)"
-                        class="tabmenu bd-dark" data-toggle="modal" data-target="#theModal"></a>
+                            class="tabmenu bd-dark" data-toggle="modal" data-target="#theModal">
+                            Agregar
+                        </a>
                     </li>
                 </ul>
             </div>
             Search
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table-bordered table-striped mt-1">
+                    <table class="table table-bordered table-striped table-hover mt-1">
                         <thead class="text-white" style="background: #3b3f5c">
                             <tr>
                                 <th class="table-th text-white">Nombre</th>
