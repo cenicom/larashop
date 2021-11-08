@@ -2,10 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Exception;
+use App\Models\Sale;
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\SaleDetail;
 use App\Models\Denomination;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 class PosController extends Component
@@ -152,10 +156,16 @@ class PosController extends Component
 
         if ($cant > 0) {
             // code...
-            Cart::add($product->id, $product->name, $product->price,
-            $cant, $product->image);
+            Cart::add(
+                $product->id,
+                $product->name,
+                $product->price,
+                $cant,
+                $product->image
+            );
 
             $this->total = Cart::getTotal();
+
             $this->itemsQuantity = Cart::getTotalQuantity();
 
             $this->emit('scan-ok', $title);
@@ -177,13 +187,20 @@ class PosController extends Component
     {
         // code...
         $item = Cart::get($productId);
+
         Cart::remove($productId);
 
         $newQty = ($item->quantity) - 1;
+
         if ($newQty > 0) {
             // code...
-            Cart::add($item->id, $item->name, $item->price,
-                $newQty, $itemsQuantity->attributes[0]);
+            Cart::add(
+                $item->id,
+                $item->name,
+                $item->price,
+                $newQty,
+                $itemsQuantity->attributes[0]
+            );
         }
 
         $this->total = Cart::getTotal();
@@ -240,7 +257,7 @@ class PosController extends Component
                 // code...
                 $items = Cart::getContent();
                 foreach ($items as $item){
-                    saleDatail::create([
+                    SaleDetail::create([
                         'price' => $item->price,
                         'quantity' => $item->quantity,
                         'product_id' => $item->id,
