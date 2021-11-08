@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-sm-12">	
+	<div class="col-sm-12">
 		<div>
 			<div class="connect-sorting">
 				<h5 class="text-center mb-3">Resumen de la Venta</h5>
@@ -8,7 +8,7 @@
 						<div class="card-body">
 							<div class="task-header">
 								<div>
-									<h2>Total: ${{number_format($total,2)}}</h2>
+									<h2>Total: ${{$total}}</h2>
 									<input type="hidden" id="hiddenTotal" value="{{$total}}">
 								</div>
 								<div>

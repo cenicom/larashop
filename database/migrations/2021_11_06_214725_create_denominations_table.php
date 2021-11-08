@@ -16,7 +16,7 @@ class CreateDenominationsTable extends Migration
         Schema::create('denominations', function (Blueprint $table) {
             $table->id();
             $table->enum('type',['Billete','Moneda','Otro'])->default('Billete');
-            $table->string('value',255);
+            $table->float('value');
             $table->string('image',100);
             $table->timestamps();
         });
