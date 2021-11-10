@@ -4,19 +4,21 @@
             <div class="widget-heading">
                 <h4 class="card-title">
                     <b>{{ $componentName}} </b>
-                </h4>                
-            </div>           
+                </h4>
+            </div>
             <div class="widget-content">
                 <div class="form-inline">
                     <div class="form-group mr-5">
                         <select wire:model="role" class="form-control">
                             <option value="Elegir" selected>:: Seleccionar un Role ::</option>
                             @foreach($roles as $role)
-                            <option value="{{$role->id}}">{{$role->name}}</option>
+                                <option value="{{$role->id}}">{{$role->name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <button wire:click.prevent="SyncAll()" type="button" class="btn btn-info mtmobile inblock mr-5">Sincronizar Todo</button>
+                    <button wire:click.prevent="SyncAll()" type="button"
+                        class="btn btn-info mtmobile inblock mr-5">Sincronizar Todo
+                    </button>
                     <button onclick="Revocar()" type="button" class="btn btn-info mtmobile mr-5">Revocar Todo</button>
                 </div>
                 <div class="row mt-3">
@@ -26,8 +28,8 @@
                                 <thead class="text-white" style="background: #3b3f5c">
                                     <tr>
                                         <th class="table-th text-white">ID</th>
-                                        <th class="table-th text-white">Permiso</th>
-                                        <th class="table-th text-white">Roles</th>                                  
+                                        <th class="table-th text-white text-center">Permiso</th>
+                                        <th class="table-th text-white text-center">Roles</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,11 +37,15 @@
                                     <tr>
                                         <td>
                                             <h6 class="text-center">{{$permiso->id}}</h6>
-                                        </td>    
+                                        </td>
                                         <td class="text-center">
                                             <div class="n-check">
                                                 <label class="new-control new-checkbox checkbox-primary">
-                                                    <input type="checkbox" wire:change="SyncPermiso($('#p' + {{ $permiso->id}}).is(':checked'), '{{ $permiso->name}}' )" id="p{{ $permiso->id }}"
+                                                    <input type="checkbox"
+                                                        wire:change="SyncPermiso($('#p' +
+                                                        {{ $permiso->id}}).is(':checked'),
+                                                        '{{ $permiso->name}}' )"
+                                                        id="p{{ $permiso->id }}"
                                                     value="{{ $permiso->id}}"
                                                     class="new-control-input"
                                                     {{ $permiso->checked == 1 ? 'checked' : '' }}>
@@ -56,13 +62,13 @@
                                 </tbody>
                             </table>
                             {{$permisos->links()}}
-                        </div>                
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>
 
 <script>
@@ -82,24 +88,23 @@
     });
 
     function Revocar() {
-        // body... 
-        
-                Swal({
-                title: 'CONFIRMAR BORRADO',
-                text: '¿Está Seguro de Querer Revocar Todos los Permisos?',
-                type: 'warning',
-                showCancelButton: true,
-                cancelButtonText: 'Cerrar',
-                cancelButtonColor: '#fff',
-                confirmButtonColor: '#3B3F5C',
-                confirmButtonText: 'Aceptar'
-                }).then(function(result) {
+        // body...
+        Swal({
+            title: 'CONFIRMAR BORRADO',
+            text: '¿Está Seguro de Querer Revocar Todos los Permisos?',
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Cerrar',
+            cancelButtonColor: '#fff',
+            confirmButtonColor: '#3B3F5C',
+            confirmButtonText: 'Aceptar'
+        }).then(function(result) {
                 // body...
-                    if(result.value){
-                        window.livewire.emit('revokeall')
-                        Swal.close()
-                        }
-                    })
-                
+            if(result.value){
+                window.livewire.emit('revokeall')
+                Swal.close()
             }
+        })
+
+    }
 </script>
