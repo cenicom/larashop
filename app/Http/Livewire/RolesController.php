@@ -25,6 +25,7 @@ class RolesController extends Component
     {
         // code...
         $this-> pageTitle = 'Listado';
+
         $this-> componentName = 'Roles';
     }
 
@@ -62,6 +63,7 @@ class RolesController extends Component
         Role::create(['name' => $this->roleName]);
 
         $this->emit('role-added', 'Se Registro el Nuevo Rol Correctamente');
+
         $this->resetUI();
     }
 
@@ -69,6 +71,7 @@ class RolesController extends Component
     {
         // code...
         $this->selected_id = $role->id;
+
         $this->roleName = $role->name;
 
         $this->emit('show-modal', 'show modal!');
@@ -88,14 +91,17 @@ class RolesController extends Component
         $this->validate($rules, $messages);
 
         $role = Role::find($this->selected_id);
+
         $role->name = $this->roleName;
+
         $role->save();
 
         $this->emit('role-updated', 'El Nombre del Rol se Actualizo Correctamente');
+
         $this->resetUI();
     }
 
-    protected $listeners = ['deleteRow' => 'Destroy'];
+    protected $listeners = ['role-deleted' => 'Destroy'];
 
     public function Destroy($id)
     {
@@ -122,7 +128,9 @@ class RolesController extends Component
 
             if($user){
                 $user->syncRoles($this->userSelected);
+
                 $this->emit('msg-ok', 'Roles Asignados Correctamente');
+
                 $this->resetInput();
             }
         }
