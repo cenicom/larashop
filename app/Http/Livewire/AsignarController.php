@@ -35,8 +35,11 @@ class AsignarController extends Component
 
         if ($this->role != 'Elegir') {
             // code...
-            $list = Permission::join('role_has_permissions as rhp',
-                'rhp.permission_id', 'permissions.id')
+            $list = Permission::join(
+                    'role_has_permissions as rhp',
+                    'rhp.permission_id',
+                    'permissions.id'
+                )
             ->where('role_id', $this->role)
             ->pluck('permissions.id')
             ->toArray();

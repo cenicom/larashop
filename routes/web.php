@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\CoinsController;
 use App\Http\Livewire\RolesController;
+use App\Http\Livewire\UsersController;
+use App\Http\Livewire\AsignarController;
 use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CategoriesController;
 use App\Http\Livewire\PermissionsController;
@@ -34,5 +36,5 @@ Route::get('denominations', CoinsController::class);
 Route::get('pos', PosController::class);
 Route::get('roles', RolesController::class);
 Route::get('permisos', PermissionsController::class);
-/* Route::get('asignar', AsignarController::class);
-Route::get('users', UsersController::class); */
+Route::get('asignar', AsignarController::class);
+Route::get('users', UsersController::class);
