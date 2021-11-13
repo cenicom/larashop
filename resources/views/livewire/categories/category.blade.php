@@ -15,7 +15,7 @@
             @include('common.searchBox')
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table-bordered table-hover table striped mt-1">
+                    <table class="table table-hover table-bordered table-striped mt-1">
                         <thead class="text-white" style="background: #3b3f5c">
                             <tr>
                                 <th class="table-th text-center text-white">Nombre Categoria</th>

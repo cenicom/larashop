@@ -24,6 +24,8 @@
 
     <link href="{{ asset('template/assets/css/apps/notes.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('template/assets/css/apps/scrumboard.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('template/plugins/flatpickr/flatpickr-dark.css') }}" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 <style>

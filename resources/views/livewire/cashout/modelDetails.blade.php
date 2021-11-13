@@ -51,7 +51,7 @@
                                 @php
                                     $mytotal = 0;
                                 @endphp
-                                @foreach ($detals as $dtotal )
+                                @foreach ($details as $dtotal )
                                     @php
                                         $mytotal += $dtotal->quantity * $dtotal->price;
                                     @endphp

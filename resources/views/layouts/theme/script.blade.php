@@ -21,11 +21,15 @@
     <script src="{{ asset('template/plugins/apex/apexcharts.min.js') }}"></script>
     <script src="{{ asset('template/assets/js/dashboard/dash_2.js') }}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{asset('template/plugins/sweetalerts/sweetalert2.min.js')}}">
-    <script src="{{asset('template/plugins/notification/snackbar/snackbar.min.js')}}">
-    <script src="{{asset('template/plugins/nicescroll/nicescroll.min.js')}}">
-    <script src="{{asset('template/plugins/currency/currency.min.js')}}">
-    </script>
+    <script src="{{asset('template/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
+
+    <script src="{{asset('template/plugins/notification/snackbar/snackbar.min.js')}}"></script>
+
+    <script src="{{asset('template/plugins/nicescroll/nicescroll.min.js')}}"></script>
+
+    <script src="{{asset('template/plugins/currency/currency.min.js')}}"></script>
+
+    <script src="{{asset('template/plugins/flatpickr/flatpickr.js')}}"></script>
 
 
 <script>
