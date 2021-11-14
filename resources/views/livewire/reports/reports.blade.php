@@ -24,7 +24,7 @@
                             <div class="col-sm-12 mt-3">
                                 <h6>Elegir Tipo de Reporte</h6>
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select wire:model="reportType" class="form-control">
                                         <option value="0">Ventas del Día</option>
                                         <option value="1">Ventas por Fecha</option>
                                     </select>
@@ -33,14 +33,14 @@
                             <div class="col-sm-12 mt-3">
                                 <h6>Fecha Inicial</h6>
                                 <div class="form-group">
-                                    <input type="date" wire:model="dateFrom" class="form-control flatpickr"
+                                    <input type="text" wire:model="dateFrom" class="form-control flatpickr"
                                      placeholder="Click para Elegir">
                                 </div>
                             </div>
                             <div class="col-sm-12 mt-3">
                                 <h6>Fecha Final</h6>
                                 <div class="form-group">
-                                    <input type="date" wire:model="dateTo" class="form-control flatpickr"
+                                    <input type="text" wire:model="dateTo" class="form-control flatpickr"
                                      placeholder="Click para Elegir">
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        flatpickr(document.getElementByClassName('flatpickr'),{
+        flatpickr(document.getElementsByClassName('flatpickr'),{
             enableTime: false,
             dateFormat: 'Y-m-d',
             locale:{
