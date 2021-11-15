@@ -12,6 +12,7 @@ use App\Http\Livewire\ReportsController;
 use App\Http\Livewire\ProductsController;
 use App\Http\Livewire\CategoriesController;
 use App\Http\Livewire\PermissionsController;
+use App\Http\Controllers\ExportPdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,9 @@ Route::get('asignar', AsignarController::class);
 Route::get('users', UsersController::class);
 Route::get('cashouts', CashoutController::class);
 Route::get('reports', ReportsController::class);
+
+Route::get('report/pdf/{user}/{type}/{f1}/{f2}',[ExportPdfController::class, 'reportPdf']);
+Route::get('report/pdf/{user}/{type}',[ExportPdfController::class, 'reportPdf']);
+
+Route::get('report/excel/{user}/{type}/{f1}/{f2}',[ExportPdfController::class, 'reportExcel']);
+Route::get('report/excel/{user}/{type}',[ExportPdfController::class, 'reportExcel']);
